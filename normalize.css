@@ -1,0 +1,31 @@
+
+body {
+    background-color: black;
+}
+
+#contenedor {
+    border: 2px solid black;
+    padding: 10px;
+    margin-bottom: 30px;
+    background-color: green;
+}
+
+#bienvenida {
+    color:white;
+}
+.titulo {
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+}
+
+
+#cuadro {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border: 2px solid hsl(59, 100%, 25%);
+    color:white;
+
+    
+}
+
