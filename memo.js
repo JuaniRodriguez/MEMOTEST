@@ -1,12 +1,15 @@
 const $cuadros=document.querySelectorAll("#cuadro");
 const $botonJugar=document.querySelector(".boton")
 $botonJugar.onclick=jugar;
-$ronda=document.querySelector("#ronda");
+//$botonJugar=document.querySelector("#ronda");
+$bienvenida=document.querySelector("#bienvenida");
 
 function jugar() {
-document.querySelector("#bienvenida").setAttribute("style","display:none");
-$ronda.setAttribute("style","");
-$ronda.textContent="Ronda 1";
+$bienvenida.textContent="Juegue!"    
+//document.querySelector("#bienvenida").setAttribute("style","display:none");
+$botonJugar.textContent="Ronda 1";
+//$botonJugar.setAttribute("style","");
+//$botonJugar.textContent="Ronda 1";
 resetear($cuadros)
 asignarColor()
 
@@ -60,11 +63,10 @@ function asignarColor() {
 
                 if(contadorCuadros[0]==contadorCuadros[1]) {
                     pares=pares+2;
-                    $ronda.textContent=`Ronda ${rondas=rondas + 1}`;
                     if(pares==16) {
                         setTimeout(() => {
-                            $ronda.textContent=`Ronda ${rondas=rondas - 1}`;
-                            alert(`ganaste!Lo completaste en ${rondas=rondas - 1 } rondas`)    
+                            $botonJugar.textContent="Jugar";
+                            $bienvenida.textContent=`Ganaste en ${rondas=rondas - 1 } rondas!`
                         }, 500);
                         
 
@@ -72,7 +74,7 @@ function asignarColor() {
                         contadorCuadros=[];
                         contadorCuadrosNumerico=0;
                         target=[];
-                        $ronda.textContent=`Ronda ${rondas=rondas + 1}`;
+                        $botonJugar.textContent=`Ronda ${rondas=rondas + 1}`;
                 } else {
                     setTimeout(() => {
                         target.forEach((cuadro)=>
@@ -84,7 +86,7 @@ function asignarColor() {
                         contadorCuadros=[];
                         contadorCuadrosNumerico=0;
                         target=[];
-                        $ronda.textContent=`Ronda ${rondas=rondas + 1}`;
+                        $botonJugar.textContent=`Ronda ${rondas=rondas + 1}`;
                     }, 501);
                 }
             } 
