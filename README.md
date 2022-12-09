@@ -1,1 +1,1 @@
-MEMOTEST GAME done with HTML, CSS, JAVASCRIPT tested with CYPRESS.
+MEMOTEST GAME done with HTML, CSS, JAVASCRIPT and tested with CYPRESS.
