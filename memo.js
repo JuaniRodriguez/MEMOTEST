@@ -1,15 +1,11 @@
 const $cuadros=document.querySelectorAll("#cuadro");
 const $botonJugar=document.querySelector(".boton")
 $botonJugar.onclick=jugar;
-//$botonJugar=document.querySelector("#ronda");
 $bienvenida=document.querySelector("#bienvenida");
 
 function jugar() {
 $bienvenida.textContent="Juegue!"    
-//document.querySelector("#bienvenida").setAttribute("style","display:none");
 $botonJugar.textContent="Ronda 1";
-//$botonJugar.setAttribute("style","");
-//$botonJugar.textContent="Ronda 1";
 resetear($cuadros)
 asignarColor()
 
@@ -53,7 +49,8 @@ function asignarColor() {
         cuadro.onclick=function(e) {
             cuadro.style.setProperty("background-color",`${objetoColores[i+1]}`);
             target.push(e.target)
-           
+            e.target.style.pointerEvents="none";
+           //console.log(cuadro.style.backgroundColor)
             
             contadorCuadros.push(`${objetoColores[[i+1]]}`);
             contadorCuadrosNumerico++;
@@ -63,12 +60,11 @@ function asignarColor() {
 
                 if(contadorCuadros[0]==contadorCuadros[1]) {
                     pares=pares+2;
-                    if(pares==16) {
+                    if(pares==16) {  
                         setTimeout(() => {
                             $botonJugar.textContent="Jugar";
                             $bienvenida.textContent=`Ganaste en ${rondas=rondas - 1 } rondas!`
-                        }, 500);
-                        
+                        }, 300);
 
                     }
                         contadorCuadros=[];
@@ -81,19 +77,20 @@ function asignarColor() {
 
                         cuadro.removeAttribute("style")
                     )
-                    }, 500);
+                    }, 300);
                     setTimeout(() => {
                         contadorCuadros=[];
                         contadorCuadrosNumerico=0;
                         target=[];
                         $botonJugar.textContent=`Ronda ${rondas=rondas + 1}`;
-                    }, 501);
+                    }, 301);
                 }
             } 
         }   
     })
 }
 
-
+//arreglar que si esta seleccionado ya, no se pueda seleccionar
+// que no se pueda apretar dos veces el mismo.
 
 
